@@ -1,4 +1,4 @@
-type DotComString = `${string}.com`;
+export type DotComString = `${string}.com`;
 export type DateTimeString =
   `${number}-${number}-${number}T${number}:${number}:${number}.${number}${number}${number}${number}${number}${number}${number}${number}+${number}:${number}${number}`;
 
@@ -17,4 +17,10 @@ export interface CreatorActivityMap {
   creator: Creator;
   activityCount: number;
   latestActivity: DateTimeString;
+}
+
+export interface CreatorLatestProductObj {
+  latestActivity: DateTimeString;
+  activityCount: number;
+  creator: Creator;
 }
