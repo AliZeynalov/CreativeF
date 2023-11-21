@@ -3,29 +3,29 @@ import "./App.css";
 import { Creator, CreatorActivityMap, DateTimeString, Product } from "./Types";
 import { List } from "./components/List";
 
+export const compareAndReturnRecentDate = (
+  dateString1: DateTimeString,
+  dateString2: DateTimeString,
+): DateTimeString => {
+  const date1 = new Date(dateString1);
+  const date2 = new Date(dateString2);
+  const dateStringMap = new Map<Date, DateTimeString>();
+
+  dateStringMap.set(date1, dateString1);
+  dateStringMap.set(date2, dateString2);
+
+  if (date1 > date2) {
+    return dateStringMap.get(date1)!;
+  } else {
+    return dateStringMap.get(date2)!;
+  }
+};
+
 function App() {
   const [data, setData] = useState<{
     creators: Creator[];
     products: Product[];
   }>({ creators: [], products: [] });
-
-  const compareAndReturnRecentDate = (
-    dateString1: DateTimeString,
-    dateString2: DateTimeString,
-  ): DateTimeString => {
-    const date1 = new Date(dateString1);
-    const date2 = new Date(dateString2);
-    const dateStringMap = new Map<Date, DateTimeString>();
-
-    dateStringMap.set(date1, dateString1);
-    dateStringMap.set(date2, dateString2);
-
-    if (date1 > date2) {
-      return dateStringMap.get(date1)!;
-    } else {
-      return dateStringMap.get(date2)!;
-    }
-  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -125,4 +125,5 @@ function App() {
   );
 }
 
+export {  }
 export default App;
