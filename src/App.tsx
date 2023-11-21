@@ -52,7 +52,7 @@ function App() {
     fetchData();
   }, []);
 
-  const activeCreators = useMemo(() => {
+  const creatorsWithLatests = useMemo(() => {
     const products = data.products;
     const creators = data.creators;
     const creatorActivityMap = new Map<string, CreatorActivityMap>();
@@ -108,7 +108,7 @@ function App() {
   };
 
   const sortedActiveCreators = useMemo(() => {
-    const allCreators = Array.from(activeCreators.values());
+    const allCreators = Array.from(creatorsWithLatests.values());
     const sortedBasedOnActivityCount = allCreators.sort(
       (a, b) => b.activityCount - a.activityCount,
     );
@@ -116,7 +116,7 @@ function App() {
       sortedBasedOnActivityCount,
     ).slice(0, 3);
     return sortedArrayBasedOnLatestActivity;
-  }, [activeCreators]);
+  }, [creatorsWithLatests]);
 
   return (
     <div className="w-full">
