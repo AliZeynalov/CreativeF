@@ -1,39 +1,47 @@
-### Creative Fabrica Interview Assignment - Ali Zeynalov
+# Getting Started with Create React App
 
-### DESCRIPTION
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Assuming we have list of Creators (id, email) and Products (id, creatorId, createTime) that created by this Creators, we are tasked to calculate and list the 3 creators which 
-1) has created the highest number of products
-2) has created most recent products.
+## Available Scripts
 
-## Implementation
+In the project directory, you can run:
 
-In order to have the quickest setup I've used create-react-app template to quickly boostrap the project and get hands on the actual logic.
-The stack I've used is [React, Typescript, Tailwind.css - styling, Jest - for test]
-
-Project has a very basic structure
-- App.js is where the data fetch (json load) is happening.
-- I've add new folder of View and `MainView` file below to contain calculations and procesing. I think it's better practice to detach views and components from each other.
-- And `List` in `Components` folder is responsible to render the ui table for the active creators/emails. It's pure ui component.
-- Tests are contained in `Tests` Folder.
-
-
-## NOTES
-- I've tried to enforce TS Typing as much as possible to ensure the maximum compile-time safety.
-- created separate Types file to contain commonly shared interfaces across the project.
-
-
-## Tests
-
-I've added 4 different unit tests in 2 different suites, 
-
-1) to test the <List> and <MainView> components, to ensure if they're rendering as expected
-2) to test the helpers methods I've add another suit for  `compareAndReturnRecentDate` and `sortArraysBasedOnDate`.
-
-
-## TO START THE PROJECT
-1) Run `npm install`
-2) Run `npm start`
+### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
+
+### `npm test`
+
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
