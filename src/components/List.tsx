@@ -12,6 +12,7 @@ export interface ListInterface {
 // };
 
 export const List: React.FC<{ creators: ListInterface[] }> = ({ creators }) => {
+  console.log('\nCREATORS: ', creators);
   return (
     <div className="flex flex-col justify-between">
       {creators.map((activity) => (
